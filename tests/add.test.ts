@@ -11,19 +11,21 @@ it('calculates the sum of two numbers', () => {
     expect(sum).toBe(-4);
 });
 
-it('calculates sums using floats and BigInts', () => {
-    const maxInt = Number.MAX_SAFE_INTEGER;
-    expect(add(maxInt, -1)).toBe(maxInt - 1);
+it('calculates sums using floats', () => {
+    expect(add(2.25, 3.35)).toEqual(5.6);
+    expect(add(2, 5.5555555555)).toEqual(7.5555555555);
+});
 
-    expect(add(2.25, 3.35)).toBe(5.6);
+it('throws error with BigInts', () => {
+    expect(() => add(5000n, 5000n)).toThrow();
 });
 
 it('handles special values', () => {
-    expect(add(1, Infinity)).toBe(Infinity);
-    expect(add(1, NaN)).toBe(NaN);
+    expect(add(1, Infinity)).toEqual(Infinity);
+    expect(add(1, NaN)).toEqual(NaN);
 });
 
 it('handles string numbers similar to numbers', () => {
-    expect(add("2", "")).toBe("2"); // results are not parsed into numbers
-    expect(add("2", "2")).toBe("22"); 
+    expect(add("2", "")).toEqual("2");
+    expect(add("2", "2")).toEqual("22");
 });
