@@ -18,12 +18,12 @@ it('calculates sums using floats and BigInts', () => {
     expect(add(2.25, 3.35)).toBe(5.6);
 });
 
-it('handles strings and special values', () => {
+it('handles special values', () => {
     expect(add(1, Infinity)).toBe(Infinity);
     expect(add(1, NaN)).toBe(NaN);
+});
 
+it('handles string numbers similar to numbers', () => {
     expect(add("2", "")).toBe("2"); // results are not parsed into numbers
     expect(add("2", "2")).toBe("22"); 
-    // JS appends strings when they're summed, therefore 22 is the correct answer in the last expect-statement
-    // but perhaps it would be better to parse strings into numbers before?
 });

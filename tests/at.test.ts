@@ -6,6 +6,9 @@ it('resolves values from nested data structures', () => {
 });
 
 it('handles undefined and null values and invalid indexes', () => {
-    const object = { a: null, b: { c: 'test', a: [undefined] } };
-    expect(at(object, ['a', 'b.c', 'b.a[0]', 'c'])).toEqual([null, 'test', undefined, undefined]);
+    const objectWithNullValues = { a: null, b: { c: 'test', a: [undefined] } };
+    expect(at(objectWithNullValues, ['a', 'b.c', 'b.a[0]'])).toEqual([null, 'test', undefined]);
+
+    expect(at({}, ['a'])).toEqual([undefined]);
+    expect(at({ a: 'a' }, [''])).toEqual([undefined]);
 });
