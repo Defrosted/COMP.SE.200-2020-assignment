@@ -7,6 +7,7 @@ it('returns the first proper value', () => {
     expect(defaultToAny(undefined, null, NaN)).toEqual(NaN);
     expect(defaultToAny(undefined, "This", null)).toEqual("This");
     expect(defaultToAny(10, null , 20)).toEqual(10);
+    expect(defaultToAny(undefined, null, null)).toEqual(null);
     expect(defaultToAny(undefined, NaN ,null)).toEqual(null);//The function returns NaN as a normal value.
     expect(defaultToAny(NaN, "", 20)).toEqual("");//The function returns NaN as a normal value.
 });

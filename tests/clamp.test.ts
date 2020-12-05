@@ -7,8 +7,10 @@ it('clamps numbers', () => {
     expect(clamp(10, -5, 5)).toEqual(5); //Returns lower bound, when should return upper bound.
 });
 
-it('handles NaN and undefined values', () => {
+it('handles NaN and infinity values', () => {
     expect(clamp(NaN, 1, 2)).toEqual(NaN)
     expect(clamp(-7, -3, NaN)).toEqual(-3)
+    expect(clamp(-Infinity, -2, 2)).toEqual(-2)
+    expect(clamp(Infinity, -1, 2)).toEqual(2)//Returns lower bound, when should return upper bound.
     expect(clamp(7, NaN, 6)).toEqual(6) //Returns lower bound, when should return upper bound.
 });
