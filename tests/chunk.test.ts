@@ -1,9 +1,9 @@
 import chunk from '../src/chunk';
 
 it('chunks an array into subarrays of given size', () => {
-    expect(chunk([0, 1, 2])).toEqual([[0], [1], [2]]);
     expect(chunk(['a', 'b', 'c', 'd'], 2)).toEqual([['a', 'b'], ['c', 'd']]);
     expect(chunk(['a', 'b', 'c', 'd'], 3)).toEqual([['a', 'b', 'c'], ['d']]);
+    expect(chunk([0, 1, 2])).toEqual([[0], [1], [2]]);
 });
 
 it('chunks with empty arrays', () => {

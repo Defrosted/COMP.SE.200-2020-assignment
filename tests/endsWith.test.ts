@@ -18,7 +18,8 @@ it('handles empty strings', () => {
     expect(endsWith('', 'c')).toEqual(false);
     expect(endsWith('', '')).toEqual(true);
 });
-it('handles third parameters', () => {
+
+it('handles undefined and NaN as the third parameter', () => {
     expect(endsWith('abc', 'c', undefined)).toEqual(true);
     expect(endsWith('abc', 'c', NaN)).toEqual(false);
 });

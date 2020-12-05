@@ -26,6 +26,6 @@ it('handles special values', () => {
 });
 
 it('handles string numbers similar to numbers', () => {
-    expect(add("2", "")).toEqual("2");
-    expect(add("2", "2")).toEqual("22");
+    expect(add("2", "")).toEqual(2);
+    expect(add("2", "2")).toEqual(4);
 });

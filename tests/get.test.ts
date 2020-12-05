@@ -7,7 +7,7 @@ it('returns correct values', () => {
     expect(get(object, 'a.b.c', 'default')).toEqual('default');
 });
 
-it('handles', () => {
+it('handles empty string parameters and NaN', () => {
     const object = { 'a': [{ 'b': { 'c': 3 } }] };
     expect(get(NaN, 'a[0].b.c')).toEqual(undefined);
     expect(get("", ['a', '0', 'b', 'c'], 'default')).toEqual('default');
