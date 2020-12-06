@@ -11,6 +11,7 @@ it('slices an array', () => {
 
 it('handles empty arrays', () => {
     expect(slice([])).toEqual([]);
+    expect(slice([], 0,1)).toEqual([]);
 });
 
 it('handles undefined start and end parameters', () => {
