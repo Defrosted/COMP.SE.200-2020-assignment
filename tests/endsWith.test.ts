@@ -7,6 +7,7 @@ it('handles string and target as expected', () => {
     expect(endsWith('abc', 'ab', 2)).toEqual(true);
     expect(endsWith('abcdef', 'cd', 4)).toEqual(true);
     expect(endsWith('abc', 'a', 1)).toEqual(true);
+    expect(endsWith('abc', 'a', 5)).toEqual(false);
 });
 
 it('handles undefined values', () => {
